@@ -62,3 +62,21 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F1F9A44A295B35AC
 echo "deb http://librealsense.intel.com/ubuntu/raspbian/arm64/ $(lsb_release -c | awk '{print $2}') main" | sudo tee /etc/apt/sources.list.d/realsense.list
 
 sudo apt update
+
+sudo apt-get install -y cmake libusb-1.0-0-dev libgtk-3-dev libglfw3-dev libssl-dev
+
+cd ~
+
+git clone https://github.com/IntelRealSense/librealsense.git
+
+cd librealsense
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make -j4
+
+sudo make install
