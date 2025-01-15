@@ -80,3 +80,11 @@ cmake ..
 make -j4
 
 sudo make install
+
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe m>
+
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe>
+
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe >
