@@ -57,7 +57,8 @@ deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe m
 deb-src http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
 
 
-curl -sSL https://librealsense.intel.com/keys/Intel_GPG_2022.key | sudo gpg --dearmor -o /usr/share/keyrings/librealsense-archive-keyring.gpg
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F1F9A44A295B35AC
 
-echo "deb [signed-by=/usr/share/keyrings/librealsense-archive-keyring.gpg] https://librealsense.intel.com/ubuntu/jammy stable main" | sudo tee /etc/apt/sources.list.d/librealsense.list
+echo "deb http://librealsense.intel.com/ubuntu/raspbian/arm64/ $(lsb_release -c | awk '{print $2}') main" | sudo tee /etc/apt/sources.list.d/realsense.list
 
+sudo apt update
